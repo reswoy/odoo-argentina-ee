@@ -1,6 +1,6 @@
 {
     "name": "Argentinian Electronic Invoicing UX",
-    "version": "19.0.1.2.0",
+    "version": "19.0.1.2.1",
     "category": "Localization/Argentina",
     "sequence": 14,
     "author": "ADHOC SA",
