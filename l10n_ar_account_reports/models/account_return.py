@@ -34,7 +34,7 @@ class AccountReturn(models.Model):
             domain += l10n_ar_domain
         return domain
 
-    def _ensure_tax_group_configuration_for_tax_closing(self):
+    def _ensure_tax_group_configuration_for_tax_closing(self, tax_group_ids=None):
         """
         Skip tax group account validation for AR simple closing returns,
         since we use the partner's AP/AR accounts instead of tax group accounts.
@@ -43,7 +43,7 @@ class AccountReturn(models.Model):
         """
         if self.type_id.l10n_ar_is_simple_closing_return:
             return
-        return super()._ensure_tax_group_configuration_for_tax_closing()
+        return super()._ensure_tax_group_configuration_for_tax_closing(tax_group_ids)
 
     def _get_tax_closing_payable_and_receivable_accounts(self):
         """Para simple closing returns argentinos, usamos la cuenta configurada en el return type
